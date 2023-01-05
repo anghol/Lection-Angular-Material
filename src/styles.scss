@@ -1,1 +1,65 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+@use 'scss/theme/theme';
+@use 'scss/theme/tokens';
+@use 'scss/theme/colors';
+@use 'scss/theme/typography';
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Lesson-9-primary: mat.define-palette(mat.$indigo-palette);
+$Lesson-9-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Lesson-9-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Lesson-9-theme: mat.define-light-theme((
+  color: (
+    primary: $Lesson-9-primary,
+    accent: $Lesson-9-accent,
+    warn: $Lesson-9-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($Lesson-9-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+:root, ::before, ::after {
+  @include tokens.tokens;
+  @include theme.init;
+}
+
+html, body { height: 100%; }
+
+body { 
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  display: flex;
+  background-color: colors.background();
+  color: colors.on-background();
+}
+
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' var(--symbol-fill, 0),
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+@import 'scss/mat-sidenav';
