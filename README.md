@@ -1,5 +1,10 @@
 # Lesson9
 
+## About
+This project is a lesson from "Modern Fronted" course by Codemasters. In this single-page application teacher created a side navigation using Angular Material. Then it was stylized for requirements of Material Design.
+
+Homework: add responsiveness for navigation when a screen size changes.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
 ## Development server
