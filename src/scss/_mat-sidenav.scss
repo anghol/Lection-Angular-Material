@@ -13,13 +13,27 @@
     border: none;
     background-color: colors.surface();
     color: colors.on-surface-variant();
+
+    @media (max-width: 839px) {
+        width: 80px;
+
+        .mat-mdc-nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+    }
 }
 
 .mat-mdc-list-item {
-    @include typography.label-large();
+    @include typography.label-large;
     height: 56px !important;
     padding-inline: 16px 24px !important;
     border-radius: 28px;
+
+    @media (max-width: 839px) {
+        padding-inline: 0 !important;
+    }
 
     .mat-mdc-list-item-unscoped-content {
         display: flex;
@@ -27,12 +41,23 @@
         gap: 12px;
         align-items: center;
         color: inherit;
-    }
 
+        @media (max-width: 839px) {
+            flex-direction: column;
+            gap: 4px;
+            @include typography.label-medium;
+
+            .list-item-text {
+                display: none;
+                visibility: hidden;
+            }
+        }        
+    }
+    
     &.mat-mdc-list-item-active {
         background-color: colors.secondary-container();
         color: colors.on-secondary-container();  
-        --symbol-fill: 1; 
+        --symbol-fill: 1;
     }
 
     &.mat-mdc-list-item-interactive::before {
