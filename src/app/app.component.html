@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-    <mat-sidenav mode="side" [opened]="isSidenavOpened">
+    <mat-sidenav mode="side" [opened]="authService.isAuthorized">
 
         <mat-nav-list>
             <a mat-list-item routerLink="page-1" routerLinkActive="mat-mdc-list-item-active"
@@ -14,24 +14,24 @@
             </a>
             <a mat-list-item routerLink="page-3" routerLinkActive="mat-mdc-list-item-active"
             [routerLinkActiveOptions]="{exact: true}">
-                <mat-icon>mode_comment</mat-icon>
-                <div class="list-item-text">Сообщения</div>
+                <mat-icon>photo_library</mat-icon>
+                <div class="list-item-text">Фото</div>
             </a>
             <a mat-list-item routerLink="page-4" routerLinkActive="mat-mdc-list-item-active"
             [routerLinkActiveOptions]="{exact: true}">
-                <mat-icon>mode_comment</mat-icon>
-                <div class="list-item-text">Сообщения</div>
+                <mat-icon>headphones</mat-icon>
+                <div class="list-item-text">Музыка</div>
             </a>
             <a mat-list-item routerLink="page-5" routerLinkActive="mat-mdc-list-item-active"
             [routerLinkActiveOptions]="{exact: true}">
-                <mat-icon>mode_comment</mat-icon>  
-                <div class="list-item-text">Сообщения</div>
+                <mat-icon>sticky_note_2</mat-icon>  
+                <div class="list-item-text">Заметки</div>
             </a>
         </mat-nav-list>
+        <button mat-button (click)="authService.logout()">Logout</button>
 
     </mat-sidenav>
     <mat-sidenav-content>
-        <button mat-raised-button color="primary" (click)="toggleSidenav()">Toggle Sidenav</button>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

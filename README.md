@@ -5,6 +5,8 @@ This project is a lesson from "Modern Fronted" course by Codemasters. In this si
 
 Homework: add responsiveness for navigation when a screen size changes.
 
+Homework 2: create a simple authorization: secure pages must be available to only authorized users.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
 ## Development server
