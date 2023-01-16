@@ -25,6 +25,13 @@
     }
 }
 
+.mat-drawer-inner-container {
+    overflow: visible !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .mat-mdc-list-item {
     @include typography.label-large;
     height: 56px !important;
@@ -67,4 +74,8 @@
     &.mat-mdc-list-item-interactive:not(:focus):not(.mdc-list-item--disabled):hover::before {
         opacity: .08;
     }
+}
+
+.mat-mdc-button {
+    min-width: auto;
 }

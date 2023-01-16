@@ -7,6 +7,8 @@ Homework: add responsiveness for navigation when a screen size changes.
 
 Homework 2: create a simple authorization: secure pages must be available to only authorized users.
 
+Homework 3: stylize books-module using Material Design requirements and add grid with columns.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
 ## Development server

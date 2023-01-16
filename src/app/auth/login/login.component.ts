@@ -9,6 +9,7 @@ import { LoginModel } from '../models/login.model';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  
   public loginForm = new FormGroup({
     email: new FormControl('', [
       Validators.required, Validators.email

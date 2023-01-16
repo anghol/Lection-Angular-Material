@@ -3,11 +3,19 @@
         <mat-form-field>
             <mat-label>Email</mat-label>
             <input matInput type="email" formControlName="email">
+            <mat-error *ngIf="email.hasError('required')">Email is required</mat-error>
+            <mat-error *ngIf="email.hasError('email')">Email has wrong format</mat-error>
         </mat-form-field>
+        <!-- <ng-container *ngIf="email.dirty || email.touched">
+        </ng-container> -->
+
         <mat-form-field>
             <mat-label>Password</mat-label>
             <input matInput type="password" formControlName="password">
+            <mat-error *ngIf="password.hasError('required')">Password is required</mat-error>
         </mat-form-field>
+        <!-- <ng-container *ngIf="password.dirty || password.touched">
+        </ng-container> -->
     </form>
     <button mat-raised-button (click)="login()" [disabled]="loginForm.invalid">Login</button>
 </div>

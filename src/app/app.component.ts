@@ -10,8 +10,6 @@ import { AuthService } from './auth/auth.service';
 export class AppComponent implements OnInit {
   title = 'Lesson-9';
 
-  public isSidenavOpened: boolean = true;
-
   constructor(
     private matIconRegistry: MatIconRegistry,
     public authService: AuthService

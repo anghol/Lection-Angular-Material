@@ -22,13 +22,13 @@
                 <mat-icon>headphones</mat-icon>
                 <div class="list-item-text">Музыка</div>
             </a>
-            <a mat-list-item routerLink="page-5" routerLinkActive="mat-mdc-list-item-active"
+            <a mat-list-item routerLink="books" routerLinkActive="mat-mdc-list-item-active"
             [routerLinkActiveOptions]="{exact: true}">
                 <mat-icon>sticky_note_2</mat-icon>  
-                <div class="list-item-text">Заметки</div>
+                <div class="list-item-text">Книги</div>
             </a>
         </mat-nav-list>
-        <button mat-button (click)="authService.logout()">Logout</button>
+        <button mat-raised-button (click)="authService.logout()">Logout</button>
 
     </mat-sidenav>
     <mat-sidenav-content>

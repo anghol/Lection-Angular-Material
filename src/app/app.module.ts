@@ -19,6 +19,7 @@ import { PageThreeComponent } from './pages/page-three/page-three.component';
 import { PageFourComponent } from './pages/page-four/page-four.component';
 import { LoginComponent } from './auth/login/login.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,7 @@ import { LoginComponent } from './auth/login/login.component';
     PageTwoComponent,
     PageThreeComponent,
     PageFourComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,9 +37,9 @@ import { LoginComponent } from './auth/login/login.component';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    MatInputModule,
     FormsModule,
-    ReactiveFormsModule,
-    MatInputModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
