@@ -9,14 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./add-book-dialog.component.scss']
 })
 export class AddBookDialogComponent implements OnInit {
-
-  public book: IBook = {
-    name: 'Инквизитор Эйзенхорн',
-    author: {
-      firstName: 'Ден',
-      lastName: 'Абнетт'
-    }
-  } as IBook;
+  public action: string = 'Добавить';
 
   public bookForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
@@ -55,6 +48,7 @@ export class AddBookDialogComponent implements OnInit {
       this.name.setValue(this.data.name);
       this.firstName.setValue(this.data.author.firstName);
       this.lastName.setValue(this.data.author.lastName);
+      this.action = 'Изменить';
     }
   }
 

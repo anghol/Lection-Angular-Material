@@ -1,0 +1,84 @@
+@use 'theme/colors';
+@use 'theme/typography';
+
+.mat-mdc-text-field-wrapper {
+    background-color: colors.surface-variant() !important;
+}
+
+.mdc-text-field {
+    .mdc-text-field__input {
+        caret-color: colors.primary();
+    }
+
+    &:not(.mdc-text-field--disabled) .mdc-text-field__input {
+        @include typography.body-large;
+        color: colors.on-surface();
+    }
+
+    &:not(.mdc-text-field--disabled) .mdc-floating-label {
+        @include typography.body-large();
+        color: colors.on-surface-variant();
+    }
+}
+
+.mdc-text-field--focused {
+    &:not(.mdc-text-field--disabled) .mdc-floating-label {
+        @include typography.body-small;
+        color: colors.primary();
+    }
+}
+
+.mdc-text-field--filled {
+    &:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
+        border-bottom-color: colors.on-surface-variant();
+    }
+
+    &:not(.mdc-text-field--disabled):hover .mdc-line-ripple::before {
+        border-bottom-color: colors.on-surface();
+    }
+
+    .mdc-line-ripple::after {
+        border-bottom-color: colors.primary();
+    }
+}
+
+.mdc-text-field--invalid {
+    &:not(.mdc-text-field--disabled) {
+        .mdc-floating-label {
+            color: colors.error();
+        }
+
+        &:not(.mdc-text-field--focused):hover .mdc-floating-label{
+            color: colors.on-error-container();
+        }
+    }
+
+    &:not(.mdc-text-field--disabled) {
+        .mdc-line-ripple::before {
+            border-bottom-color: colors.error();
+        }
+        
+        &:hover .mdc-line-ripple::before {
+            border-bottom-color: colors.on-error-container();
+        }
+    }
+
+    &:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
+        border-bottom-color: colors.error();
+    }
+
+    .mdc-text-field__input {
+        caret-color: colors.error();
+    }
+}
+
+.mat-mdc-form-field-error {
+    @include typography.body-small;
+    color: colors.error();
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+    @include typography.label-large;
+    color: colors.on-primary() !important;
+    background-color: colors.primary() !important;
+}

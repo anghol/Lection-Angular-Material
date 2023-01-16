@@ -1,6 +1,3 @@
-@use '/src/scss/theme/colors';
-@use '/src/scss/theme/typography';
-
 :host {
     display: grid;
     height: 100%;
@@ -17,53 +14,4 @@
         flex-direction: column;
         gap: 8px;
     }
-}
-
-.mat-mdc-text-field-wrapper {
-    background-color: colors.surface-variant() !important;
-}
-
-.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
-    @include typography.body-large;
-    color: colors.on-surface();
-}
-
-.mdc-text-field .mdc-text-field__input {
-    caret-color: colors.primary();
-}
-  
-.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
-    @include typography.body-large();
-    color: colors.on-surface-variant();
-}
-
-.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
-    @include typography.body-small;
-}
-  
-.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
-    color: colors.primary();
-}
-  
-.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
-    border-bottom-color: colors.on-surface-variant();
-}
-
-.mdc-text-field--filled:not(.mdc-text-field--disabled):hover .mdc-line-ripple::before {
-    border-bottom-color: colors.on-surface();
-}
-  
-.mdc-text-field--filled .mdc-line-ripple::after {
-    border-bottom-color: colors.primary();
-}
-
-.mat-mdc-raised-button:not(:disabled) {
-    @include typography.label-large;
-    color: colors.on-primary();
-    background-color: colors.primary();
-}
-
-.mat-mdc-form-field-error {
-    @include typography.body-small;
-    color: colors.error();
 }

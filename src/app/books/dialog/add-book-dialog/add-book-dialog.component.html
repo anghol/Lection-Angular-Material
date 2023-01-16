@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Добавить книгу</h1>
+<h1 mat-dialog-title>{{ action }} книгу</h1>
 
 <div mat-dialog-content>
   
@@ -24,5 +24,5 @@
 
 <div mat-dialog-actions>
   <button mat-button (click)="onCancelClick()">Отмена</button>
-  <button mat-button (click)="onAddClick()" [disabled]="bookForm.invalid">Добавить</button>
+  <button mat-button (click)="onAddClick()" [disabled]="bookForm.invalid">{{ action }}</button>
 </div>

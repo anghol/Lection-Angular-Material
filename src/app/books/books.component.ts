@@ -30,7 +30,7 @@ export class BooksComponent {
 
   public editBook(book: IBook) {
     const dialogRef = this.dialog.open(AddBookDialogComponent, {
-      data: book,
+      data: book
     });
 
     dialogRef.afterClosed().subscribe(result => {  
