@@ -1,0 +1,39 @@
+@use 'theme/colors';
+@use 'theme/typography';
+
+.mat-mdc-button-base:not(.mat-mdc-icon-button) {
+    padding-inline: 24px !important;
+    height: 40px !important;
+    border-radius: 24px !important;
+}
+
+.mat-mdc-button:not(:disabled) {
+    @include typography.label-large;
+    color: colors.primary() !important;
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+    @include typography.label-large;
+    color: colors.on-primary() !important;
+    background-color: colors.primary() !important;
+}
+
+.mat-mdc-outlined-button:not(:disabled) {
+    @include typography.label-large;
+    color: colors.primary() !important;
+    background-color: colors.surface() !important;
+    border-color: colors.outline() !important;
+}
+
+.mat-mdc-unelevated-button {
+    &:not(:disabled) {
+        @include typography.label-large;
+        color: colors.on-primary() !important;
+        background-color: colors.primary() !important;
+    }
+
+    :disabled {
+        color: colors.on-surface() !important;
+        background-color: colors.on-surface() !important;
+    }
+}

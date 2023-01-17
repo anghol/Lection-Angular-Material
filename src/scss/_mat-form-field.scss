@@ -76,9 +76,3 @@
     @include typography.body-small;
     color: colors.error();
 }
-
-.mat-mdc-raised-button:not(:disabled) {
-    @include typography.label-large;
-    color: colors.on-primary() !important;
-    background-color: colors.primary() !important;
-}

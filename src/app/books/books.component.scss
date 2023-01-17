@@ -1,12 +1,22 @@
 @use '/src/scss/theme/colors';
 @use '/src/scss/theme/typography';
 
-.mdc-list {
-    background-color: colors.surface();
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+h1 {
+    @include typography.headline-large;
+}
+
+.mat-mdc-list {
+
+    &.book-list {
+        background-color: colors.surface();
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        padding-inline: 16px 24px;
+        padding-block: 8px;
+    }
 }
 
 .mat-mdc-list-item {
@@ -24,8 +34,9 @@
     color: colors.on-surface-variant();
 }
 
-.mat-mdc-icon-button {
+.mat-mdc-list-item-meta {
     margin-inline: 16px 0;
+    padding-inline: 12px;
 
     color: colors.on-surface-variant();
     &:active {

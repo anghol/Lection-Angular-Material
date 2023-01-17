@@ -1,8 +1,8 @@
 <h1>Книги</h1>
 
-<button mat-raised-button (click)="addBook()">Добавить книгу</button>
+<button mat-flat-button (click)="addBook()">Добавить книгу</button>
 
-<mat-list class="booklist">
+<mat-list class="book-list">
     <mat-list-item *ngFor="let book of bookService.getList() | async">
       <span matListItemTitle>{{ book.name }}</span>
       <span matListItemLine>{{ book.author | author }}</span>
@@ -11,7 +11,6 @@
       </button>
     </mat-list-item>
 </mat-list>
-
 <!-- <div *ngFor="let book of bookService.getList() | async" class="booklist">
     {{ book.author | author }}: {{ book.name }}
     <button mat-icon-button (click)="editBook(book)">
