@@ -44,6 +44,29 @@ $Lesson-9-theme: mat.define-light-theme((
   @include theme.init;
 }
 
+:root {
+  --body-margins: 16px;
+  --body-gutters: 8px;
+  --body-columns: 4;
+  --body-grow: 0;
+
+  @media (min-width: 632px) {
+      --body-margins: 32px;
+      --body-gutters: 12px;
+      --body-columns: 12;
+  }
+
+  @media (min-width: 904px) {
+      --body-margins: auto;
+  }
+
+  @media (min-width: 1240px) {
+      --body-margins: 200px;
+      --body-gutters: 32px;
+      --body-grow: 1;
+  }
+}
+
 html, body { height: 100%; }
 
 body { 

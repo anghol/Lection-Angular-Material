@@ -1,0 +1,34 @@
+@use '/src/scss/theme/colors';
+@use '/src/scss/theme/typography';
+
+.mdc-list {
+    background-color: colors.surface();
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mat-mdc-list-item {
+    // padding-block: 8px;
+    border-radius: 0;
+}
+
+.mat-mdc-list-item-title {
+    @include typography.body-large;
+    color: colors.on-surface();
+}
+
+.mat-mdc-list-item-line {
+    @include typography.body-medium;
+    color: colors.on-surface-variant();
+}
+
+.mat-mdc-icon-button {
+    margin-inline: 16px 0;
+
+    color: colors.on-surface-variant();
+    &:active {
+        color: colors.primary();
+    }
+}
