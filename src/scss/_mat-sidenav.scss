@@ -76,6 +76,24 @@
     }
 }
 
-.mat-mdc-button {
-    min-width: auto;
+.button-logout-icon {
+    display: none !important;
+    visibility: hidden;
+    color: colors.primary() !important;
+    background-color: colors.surface() !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: colors.outline() !important;
+}  
+
+@media (max-width: 839px) {
+    .button-logout-icon {
+        display: block !important;
+        visibility: visible;
+    }   
+
+    .button-logout-text {
+        display: none !important;
+        visibility: hidden;
+    }
 }

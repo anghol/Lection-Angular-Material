@@ -1,15 +1,30 @@
 @use '/src/scss/theme/colors';
 @use '/src/scss/theme/typography';
 
+:host {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 24px;
+}
+
 h1 {
     @include typography.headline-large;
+    grid-column: 1 / -1;
+}
+
+.actions {
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: space-around;
+    gap: 16px;
 }
 
 .mat-mdc-list {
+    grid-column: 1 / -1;
 
     &.book-list {
         background-color: colors.surface();
-        max-width: 500px;
         display: flex;
         flex-direction: column;
         gap: 8px;
@@ -20,7 +35,6 @@ h1 {
 }
 
 .mat-mdc-list-item {
-    // padding-block: 8px;
     border-radius: 0;
 }
 

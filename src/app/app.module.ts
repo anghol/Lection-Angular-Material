@@ -18,6 +18,8 @@ import { PageTwoComponent } from './pages/page-two/page-two.component';
 import { PageThreeComponent } from './pages/page-three/page-three.component';
 import { PageFourComponent } from './pages/page-four/page-four.component';
 import { LoginComponent } from './auth/login/login.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
 
 
 @NgModule({
@@ -33,6 +35,7 @@ import { LoginComponent } from './auth/login/login.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
@@ -41,7 +44,9 @@ import { LoginComponent } from './auth/login/login.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

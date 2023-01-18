@@ -1,6 +1,25 @@
 <h1>Книги</h1>
 
-<button mat-flat-button (click)="addBook()">Добавить книгу</button>
+<div class="actions">
+  <button mat-flat-button (click)="createBook()">Cоздать книгу</button>
+  <button mat-flat-button (click)="addBooks()">Добавить 10 книг</button>
+  <button mat-flat-button (click)="deleteBooks()">Удалить все книги</button>
+</div>
+
+<mat-list class="book-list">
+  <mat-list-item *ngFor="let book of books">
+    <span matListItemTitle>{{ book.name }}</span>
+    <span matListItemLine>{{ book.author}}</span>
+    <button mat-icon-button (click)="editBook(book)" matListItemMeta>
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button (click)="deleteBook(book)" matListItemMeta>
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
+
+<!-- <button mat-flat-button (click)="addBook()">Добавить книгу</button>
 
 <mat-list class="book-list">
     <mat-list-item *ngFor="let book of bookService.getList() | async">
@@ -10,7 +29,7 @@
         <mat-icon>edit</mat-icon>
       </button>
     </mat-list-item>
-</mat-list>
+</mat-list> -->
 <!-- <div *ngFor="let book of bookService.getList() | async" class="booklist">
     {{ book.author | author }}: {{ book.name }}
     <button mat-icon-button (click)="editBook(book)">
