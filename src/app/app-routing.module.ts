@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { LoginComponent } from './auth/login/login.component';
 import { NotAuthGuard } from './auth/not-auth.guard';
+import { RegisterComponent } from './auth/register/register.component';
 import { PageFourComponent } from './pages/page-four/page-four.component';
 import { PageOneComponent } from './pages/page-one/page-one.component';
 import { PageThreeComponent } from './pages/page-three/page-three.component';
@@ -22,6 +23,11 @@ const routes: Routes = [
   {
     path: "auth/login",
     component: LoginComponent,
+    canActivate: [NotAuthGuard]
+  },
+  {
+    path: "auth/register",
+    component: RegisterComponent,
     canActivate: [NotAuthGuard]
   },
   {

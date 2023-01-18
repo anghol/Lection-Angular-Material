@@ -20,6 +20,7 @@ import { PageFourComponent } from './pages/page-four/page-four.component';
 import { LoginComponent } from './auth/login/login.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { RegisterComponent } from './auth/register/register.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
     PageThreeComponent,
     PageFourComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

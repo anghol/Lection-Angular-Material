@@ -1,0 +1,9 @@
+@use '/src/scss/theme/typography';
+@use '/src/scss/theme/colors'; 
+
+h1 {
+    @include typography.headline-large;
+    color: colors.on-surface();
+
+    padding-inline: 16px;
+}
