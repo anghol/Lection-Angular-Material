@@ -2,22 +2,51 @@
 @use '/src/scss/theme/typography';
 
 :host {
+    flex-basis: 840px;
+    flex-shrink: 1;
+    flex-grow: var(--body-grow);
+    margin-inline: var(--body-margins);
+
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    row-gap: 24px;
+    grid-template-columns: repeat(var(--body-columns), 1fr);
+    grid-column-gap: var(--body-gutters);
+    row-gap: 20px;
+
+    container-type: inline-size;
 }
 
 h1 {
     @include typography.headline-large;
     grid-column: 1 / -1;
+    padding-left: 16px;
+
+    @container (min-width: 632px) {
+        grid-column: 1 / -1;
+    }
 }
 
 .actions {
     grid-column: 1 / -1;
 
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     gap: 16px;
+    padding-inline: 16px;
+
+    @container (min-width: 450px) {
+        grid-column: 2 / 4;
+    }
+
+    @container (min-width: 632px) {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.remove-action {
+    background-color: colors.secondary-container() !important;
+    color: colors.on-secondary-container() !important;
 }
 
 .mat-mdc-list {
@@ -29,13 +58,14 @@ h1 {
         flex-direction: column;
         gap: 8px;
 
-        padding-inline: 16px 24px;
+        padding-inline: 16px 24px !important;
         padding-block: 8px;
     }
 }
 
 .mat-mdc-list-item {
     border-radius: 0;
+    padding-inline: 0 !important;
 }
 
 .mat-mdc-list-item-title {
